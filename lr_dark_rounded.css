@@ -1,0 +1,139 @@
+/*
+    Darktable Classic - Lightroom Precision Theme
+*/
+
+/* Lightroom-accurate color palette */
+@define-color lr_bg_black #000000;          /* Absolute black background */
+@define-color lr_module_grey #2B2B2B;       /* Module background */
+@define-color lr_element_grey #3A3A3A;      /* Interactive elements */
+@define-color lr_accent #A0A0A0;            /* Light grey accents */
+@define-color lr_text_primary #FFFFFF;      /* Primary text */
+@define-color lr_text_secondary #CCCCCC;    /* Secondary text */
+
+/* Base styling */
+#main_window {
+  background-color: @lr_bg_black;
+}
+
+/* Modules and panels */
+#left, #right, .dt_plugin_ui, #control-panel {
+  background-color: @lr_module_grey;
+  border: none;
+}
+
+/* Lightroom-style buttons */
+button {
+  background-color: @lr_element_grey;
+  border: none;
+  border-radius: 0.2em;
+  color: @lr_text_primary;
+  padding: 0.4em 0.8em;
+  transition: all 0.15s ease;
+}
+
+/* Icon buttons (no background) */
+button.image-button {
+  background-color: transparent;
+  border: none;
+  padding: 0.3em;
+}
+
+button.image-button:hover {
+  background-color: alpha(@lr_text_primary, 0.1);
+}
+
+/* Scrollbars */
+scrollbar slider {
+  background-color: alpha(@lr_accent, 0.4);
+  min-width: 0.5em;
+  border-radius: 0.2em;
+}
+
+scrollbar slider:hover {
+  background-color: alpha(@lr_accent, 0.6);
+}
+
+/* Text hierarchy */
+label, #iop-panel-label, #lib-panel-label {
+  color: @lr_text_primary;
+  font-weight: 500;
+}
+
+.dt_bauhaus_label, .dt_section_label {
+  color: @lr_text_secondary;
+}
+
+/* Input fields */
+entry, combobox {
+  background-color: @lr_element_grey;
+  border: 1px solid alpha(@lr_text_primary, 0.1);
+  color: @lr_text_primary;
+  padding: 0.3em 0.6em;
+}
+
+entry:focus, combobox:focus {
+  border-color: alpha(@lr_accent, 0.4);
+  box-shadow: 0 0 0 1px alpha(@lr_accent, 0.2);
+}
+
+/* Section headers */
+.dt_section_label {
+  letter-spacing: 0.05em;
+  font-size: 0.9em;
+  border-bottom: 1px solid alpha(@lr_text_primary, 0.1);
+  padding-bottom: 0.4em;
+  margin-bottom: 0.8em;
+}
+
+/* Sliders and controls */
+.dt_bauhaus slider {
+  background-color: @lr_accent;
+  border-radius: 0.2em;
+}
+
+/* Thumbnail selection */
+#thumb-main:selected #thumb-back {
+  box-shadow: 0 0 0 2px alpha(@lr_accent, 0.6);
+}
+
+/* Checkboxes */
+checkbutton check {
+  background-color: @lr_element_grey;
+  border: 1px solid alpha(@lr_text_primary, 0.2);
+  min-width: 1.2em;
+  min-height: 1.2em;
+}
+
+checkbutton check:checked {
+  background-color: @lr_accent;
+}
+
+/* Discrete animations */
+* {
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Module spacing */
+.dt_plugin_ui {
+  margin: 0.8em;
+  padding: 1.2em;
+}
+
+/* Tooltips */
+tooltip {
+  background-color: @lr_element_grey;
+  color: @lr_text_primary;
+  border-radius: 0.2em;
+  padding: 0.6em 1em;
+}
+
+/* Color mixer section (from image.png) */
+#color_adjustment_box {
+  padding: 0.8em;
+  border-left: 1px solid alpha(@lr_text_primary, 0.05);
+}
+
+.color-slider-box {
+  margin: 0.4em 0;
+  padding: 0.4em 0;
+}
