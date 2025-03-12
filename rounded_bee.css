@@ -1,0 +1,124 @@
+/*
+    Obsidian Elegance - Premium Darktable Theme
+    Subdued golden accents in void-black space
+*/
+
+/* Refined accent palette */
+@define-color gold_accent #CCA300;         /* Muted antique gold */
+@define-color gold_highlight #FFD700;      /* Selective highlights */
+@define-color void_black #0A0A0A;          /* Deep base color */
+@define-color obsidian #121212;            /* Rich dark surface */
+@define-color volcanic #1A1A1A;            /* Volcanic glass tone */
+
+/* Ultra-dark canvas */
+#main_window,
+#darkroom-view,
+#lighttable-view,
+#left,
+#right {
+  background-color: @void_black;
+  border: 0.5px solid alpha(@gold_accent, 0.08);
+}
+
+/* Subtle rounded buttons */
+button {
+  border-radius: 0.8em;
+  background-color: alpha(@obsidian, 0.95);
+  border: 0.5px solid alpha(@gold_accent, 0.1);
+  color: alpha(@gold_accent, 0.7);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+button:hover {
+  background-color: alpha(@volcanic, 0.9);
+  border-color: alpha(@gold_accent, 0.3);
+  box-shadow: 0 0 4px alpha(@gold_accent, 0.1);
+}
+
+/* Understated golden accents */
+progressbar progress,
+scrollbar slider,
+.dt_bauhaus slider {
+  background-color: alpha(@gold_accent, 0.4);
+  border: 0.5px solid alpha(@gold_accent, 0.2);
+}
+
+/* Shadowed typography */
+label,
+#iop-panel-label,
+#lib-panel-label {
+  color: alpha(#E0E0E0, 0.9);
+  text-shadow: 0 1px 2px alpha(@void_black, 0.8);
+}
+
+/* Accent reveals on interaction */
+entry:focus,
+combobox:focus {
+  box-shadow: 0 0 0 1px alpha(@gold_accent, 0.2);
+}
+
+.dt_section_label {
+  color: alpha(@gold_accent, 0.6);
+  border-bottom: 0.5px solid alpha(@gold_accent, 0.1);
+}
+
+/* Phantom borders */
+.dt_plugin_ui {
+  border-left: 1px solid alpha(@gold_accent, 0.07);
+}
+
+/* Dark matter notifications */
+#log-msg,
+#toast-msg {
+  background-color: alpha(@obsidian, 0.98);
+  border-left: 2px solid alpha(@gold_accent, 0.3);
+  color: alpha(@gold_accent, 0.7);
+}
+
+/* Stellar selections */
+#thumb-main:selected #thumb-back {
+  box-shadow: 0 0 0 1px alpha(@gold_accent, 0.2),
+              inset 0 0 8px alpha(@gold_accent, 0.05);
+}
+
+/* Ethereal hover effects */
+treeview row:hover,
+filechooser row:hover {
+  background-color: alpha(@gold_accent, 0.03);
+}
+
+/* Ancient gold checks */
+checkbutton check:checked {
+  background-color: alpha(@gold_accent, 0.15);
+  border: 0.5px solid alpha(@gold_accent, 0.3);
+}
+
+/* Void tooltips */
+tooltip {
+  background-color: alpha(@volcanic, 0.97);
+  border: 0.5px solid alpha(@gold_accent, 0.15);
+  color: alpha(@gold_accent, 0.7);
+}
+
+/* Depth-enhanced modules */
+#control-panel,
+.dt_plugin_ui {
+  background-color: alpha(@obsidian, 0.95);
+  border: 0.5px solid alpha(@gold_accent, 0.05);
+}
+
+/* Quantum animations */
+* {
+  transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+progressbar progress {
+  transition: background-color 0.6s ease-out;
+}
+
+/* Precision spacing */
+.dt_plugin_ui,
+#control-panel {
+  margin: 0.4em;
+  padding: 0.8em;
+}
