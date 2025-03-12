@@ -1,0 +1,418 @@
+/* 
+    Refined Darktable Theme
+    A functional, minimalist design with careful attention to readability and spacing
+*/
+
+/* Main accent colors */
+@define-color marine_blue #0F4C81;        /* Primary accent - marine blue */
+@define-color marine_light #3A7CA5;       /* Light marine blue */
+@define-color marine_dark #062F4F;        /* Dark marine blue */
+@define-color deep_orange #E65100;        /* Alert/notification color */
+@define-color deep_orange_light #FF7043;  /* Light orange for hover effects */
+@define-color accent_border alpha(@marine_blue, 0.15);
+
+/* Maintain original color definitions as base */
+@define-color grey_01 #cccccc;
+@define-color grey_02 #000000;
+@define-color grey_05 #3c3c3c;
+@define-color grey_10 #141414;
+@define-color grey_15 #232323;
+@define-color grey_20 #2e2e2e;
+@define-color grey_25 #3f3f3f;
+@define-color grey_30 #695300;
+@define-color grey_35 #4c4c4c;
+@define-color grey_40 #5e5e5e;
+@define-color grey_45 #121212;
+@define-color grey_50 #777777;
+@define-color grey_52 #292929;
+@define-color grey_55 #505050;
+@define-color grey_60 #a1a1a1;
+@define-color grey_65 #9e9e9e;
+@define-color grey_70 #a2a2a2;
+@define-color grey_75 #9b9b9b;
+@define-color grey_80 #808080;
+@define-color grey_90 #d4d4d4;
+@define-color grey_95 #f1f1f1;
+@define-color grey_100 #ffffff;
+
+/* Redefine color variables with our new palette */
+@define-color plugin_bg_color @grey_20;
+@define-color plugin_fg_color @grey_80;
+@define-color section_label @marine_light;
+@define-color plugin_label_color @grey_80;
+
+/* Modules controls */
+@define-color bauhaus_fill @marine_blue;
+@define-color bauhaus_fg_selected @marine_blue;
+@define-color button_checked_fg @marine_blue;
+@define-color button_hover_bg alpha(@marine_blue, 0.1);
+
+/* Minimal margins and spacing for elements */
+* {
+  margin: 0.12em;
+  padding: 0.12em;
+}
+
+/* Rounded buttons and elements */
+button,
+#add-color-button,
+entry,
+combobox,
+progressbar,
+tooltip {
+  border-radius: 0.35em;
+}
+
+/* Left accent for modules - using marine blue */
+.dt_plugin_ui {
+  border-left: 1px solid alpha(@marine_blue, 0.3);
+  padding-left: 0.2em;
+  margin: 0.15em 0;
+}
+
+/* Section headers - more subtle */
+.dt_section_label {
+  color: @marine_light;
+  padding-bottom: 0.15em;
+  border: none;
+  background-image: linear-gradient(to right, alpha(@marine_light, 0.1), transparent);
+}
+
+/* Selected thumbnails in lighttable - with marine blue */
+#thumb-main:selected #thumb-back {
+  box-shadow: 0 0 2px alpha(@marine_blue, 0.5);
+}
+
+/* Set top margin on active image in filmstrip */
+#thumbtable_filmstrip #thumb_main:active #thumb_back {
+  border-top: 2px solid alpha(@marine_blue, 0.7);
+}
+
+/* Histogram with subtle gradient border */
+#main-histogram {
+  border: none;
+  background-image: linear-gradient(to bottom, alpha(@marine_dark, 0.05), transparent);
+}
+
+/* Progress bar with gentle gradient */
+progressbar progress {
+  background-color: @marine_blue;
+  background-image: linear-gradient(
+    to right,
+    alpha(@marine_blue, 0.8),
+    alpha(@marine_light, 0.5)
+  );
+  border-radius: 0.35em;
+}
+
+/* Minimalist scrollbars */
+scrollbar slider {
+  min-width: 5px;
+  border: none;
+  background-color: alpha(@grey_40, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+scrollbar slider:hover {
+  background-color: alpha(@grey_40, 0.6);
+}
+
+/* Star icons - subtle glow effect */
+.dt_overlays_hover #thumb_main:hover #thumb_star:active,
+.dt_overlays_hover_extended #thumb_main:hover #thumb_star:active,
+.dt_overlays_always #thumb_star:active,
+.dt_overlays_always_extended #thumb_star:active,
+.dt_overlays_mixed #thumb_star:active,
+.dt_overlays_hover_block #thumb_image:hover #thumb_star:active {
+  color: @marine_blue;
+  background-color: transparent;
+  min-width: 1em;
+  transition: color 0.2s ease;
+}
+
+/* Dialog windows - subtle styling */
+dialog {
+  border: none;
+  box-shadow: 0 2px 8px alpha(@marine_dark, 0.1);
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_15, 0.95),
+    alpha(@grey_20, 0.95)
+  );
+}
+
+/* Text fields with subtle focus effect */
+entry {
+  border: none;
+  background-color: alpha(@grey_15, 0.7);
+  box-shadow: inset 0 0 2px alpha(@grey_10, 0.5);
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+entry:focus {
+  background-color: alpha(@grey_15, 0.9);
+  box-shadow: inset 0 0 3px alpha(@marine_blue, 0.3);
+}
+
+/* UI messages with orange accent for alerts */
+#log-msg,
+#toast-msg {
+  color: @grey_95;
+  font-weight: normal;
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_10, 0.9),
+    alpha(@grey_15, 0.9)
+  );
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  padding: 0.4em 1em;
+  border-radius: 0.35em;
+  border-left: 3px solid @deep_orange;
+}
+
+/* Error messages with deep orange */
+#toast-msg.error {
+  border-left: 3px solid @deep_orange;
+  color: @deep_orange_light;
+}
+
+/* Sidebar selection - subtle highlight */
+filechooser row:selected,
+#preferences_box .sidebar row:selected {
+  background-image: linear-gradient(
+    to right,
+    alpha(@marine_blue, 0.1),
+    transparent
+  );
+}
+
+filechooser row:hover,
+#preferences_box .sidebar row:hover {
+  background-image: linear-gradient(
+    to right,
+    alpha(@marine_blue, 0.05),
+    transparent
+  );
+  transition: background-image 0.2s ease;
+}
+
+#preferences_box .sidebar row:selected {
+  border-left: 2px solid alpha(@marine_blue, 0.5);
+}
+
+/* Refined tooltips */
+tooltip {
+  background-color: alpha(@grey_10, 0.95);
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  color: @grey_90;
+}
+
+/* Buttons with subtle styling and hover effect */
+button,
+#add-color-button {
+  border: none;
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_15, 0.9),
+    alpha(@grey_20, 0.9)
+  );
+  transition: all 0.2s ease;
+}
+
+button:hover,
+#add-color-button:hover {
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_15, 0.8),
+    alpha(@grey_20, 0.8)
+  );
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+button:checked,
+button:active {
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@marine_blue, 0.1),
+    alpha(@marine_blue, 0.05)
+  );
+}
+
+/* Comboboxes with subtle styling */
+combobox,
+combobox button {
+  border: none;
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_15, 0.9),
+    alpha(@grey_20, 0.9)
+  );
+  transition: all 0.2s ease;
+}
+
+combobox:hover,
+combobox button:hover {
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_15, 0.8),
+    alpha(@grey_20, 0.8)
+  );
+}
+
+/* Checkbox styling */
+checkbutton check {
+  background-color: alpha(@grey_15, 0.7);
+  border: none;
+  box-shadow: inset 0 0 2px alpha(@grey_10, 0.5);
+  border-radius: 0.2em;
+  transition: background-color 0.2s ease;
+  min-width: 1em;
+}
+
+checkbutton check:checked {
+  background-color: alpha(@marine_blue, 0.2);
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@marine_blue, 0.2),
+    alpha(@marine_blue, 0.1)
+  );
+}
+
+/* Bauhaus sliders */
+.dt_bauhaus slider {
+  background-color: alpha(@marine_blue, 0.7);
+  border-radius: 0.2em;
+  min-width: 0.5em;
+}
+
+/* Add subtle transitions for interactive elements */
+button,
+entry,
+combobox,
+checkbutton,
+filechooser row,
+#preferences_box .sidebar row {
+  transition: all 0.2s ease;
+}
+
+/* Alternating backgrounds for lists with subtle marine blue */
+treeview:nth-child(even) {
+  background-color: alpha(@marine_blue, 0.01);
+}
+
+/* Menu and popover styling */
+menu,
+popover,
+context-menu {
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0.2em;
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_10, 0.95),
+    alpha(@grey_15, 0.95)
+  );
+}
+
+menuitem:hover {
+  background-image: linear-gradient(
+    to right,
+    alpha(@marine_blue, 0.1),
+    transparent
+  );
+}
+
+/* Set reject icon when visible */
+.dt_overlays_hover #thumb_main:hover #thumb_reject:active,
+.dt_overlays_hover_extended #thumb_main:hover #thumb_reject:active,
+.dt_overlays_always #thumb_reject:active,
+.dt_overlays_always_extended #thumb_reject:active,
+.dt_overlays_mixed #thumb_reject:active,
+.dt_overlays_hover_block #thumb_image:hover #thumb_reject:active {
+  color: @deep_orange;
+  background-color: transparent;
+  min-width: 1em;
+}
+
+/* Improved contrast for module text */
+#iop-panel-label,
+#lib-panel-label {
+  color: @grey_90;
+  font-weight: normal;
+}
+
+/* Better contrast for module parameters */
+.dt_bauhaus_label {
+  color: @grey_90;
+}
+
+/* Ensure good contrast for alerts */
+#log-msg.error,
+#toast-msg.error {
+  background-color: alpha(@grey_15, 0.9);
+  color: @deep_orange_light;
+}
+
+/* Background job eventbox styling */
+#background_job_eventbox {
+  background-color: @grey_15;
+  padding: 0.2em;
+  border-radius: 0.2em;
+}
+
+/* Set tab active states */
+notebook header tab:checked {
+  border-bottom: 2px solid @marine_blue;
+}
+
+/* Set hover effect for module icons */
+#iop-plugin-ui button:hover #dt-icon,
+#lib-plugin-ui button:hover #dt-icon {
+  color: @marine_light;
+  transition: color 0.2s ease;
+}
+
+/* Better styling for module headers */
+#iop-plugin-ui .module-header,
+#lib-plugin-ui .module-header {
+  background-image: linear-gradient(
+    to right,
+    alpha(@marine_dark, 0.05),
+    transparent
+  );
+}
+
+/* Set module expanded/collapsed indicator */
+#iop-plugin-ui .expander,
+#lib-plugin-ui .expander {
+  color: @marine_blue;
+  min-width: 1em;
+}
+
+/* Notification styling with high contrast */
+#toast-msg {
+  background-color: alpha(@grey_10, 0.95);
+  color: @grey_95;
+  border-left: 3px solid @marine_blue;
+}
+
+#toast-msg.warning {
+  border-left: 3px solid @deep_orange;
+}
+
+/* Ensure good readability in all modules */
+#iop-plugin-ui *,
+#lib-plugin-ui * {
+  color: @grey_90;
+}
+
+/* Better contrast for labels */
+label {
+  color: @grey_90;
+}
+
+/* Focus on buttons */
+button:focus {
+  box-shadow: 0 0 0 1px alpha(@marine_blue, 0.3);
+}
