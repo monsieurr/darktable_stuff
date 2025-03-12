@@ -1,0 +1,196 @@
+/*
+    Premium Earth Tone Darktable Theme - Dark Edition
+    Subtle, sophisticated styling with natural accents
+*/
+
+/* Earth tone accent colors */
+@define-color earth_green #2F4F4F;        /* Deep slate green */
+@define-color earth_light #556B2F;       /* Muted olive */
+@define-color earth_dark #1E2F1E;        /* Forest depth */
+@define-color earthy_brown #8B4513;       /* Rich saddle brown */
+@define-color earthy_light #A0522D;      /* Warm terracotta */
+@define-color accent_border alpha(@earth_green, 0.15);
+
+/* Restore original spacing */
+* {
+  margin: 0.12em;
+  padding: 0.12em;
+}
+
+/* Enhanced photo information hover */
+#image-info:hover {
+  background-color: alpha(@grey_15, 0.85);
+  transition: background-color 0.3s ease;
+}
+
+/* Premium rounded edges */
+button,
+#add-color-button,
+entry,
+combobox,
+progressbar,
+tooltip,
+.dt_plugin_ui,
+.dt_section_label,
+#thumb-main:selected #thumb-back,
+#main-histogram,
+progressbar progress,
+scrollbar slider,
+dialog,
+entry,
+#log-msg,
+#toast-msg,
+filechooser row:selected,
+#preferences_box .sidebar row:selected,
+tooltip,
+checkbutton check,
+.dt_bauhaus slider,
+menu,
+popover,
+context-menu,
+menuitem,
+#background_job_eventbox,
+notebook header tab:checked,
+#iop-plugin-ui .module-header,
+#lib-plugin-ui .module-header,
+#thumb-back,
+#left,
+#right,
+.dt_plugin_ui,
+#control-panel,
+#image-info,
+scale,
+scale trough,
+scale trough highlight,
+#filmstrip,
+#thumb_image,
+#lighttable-view #thumb_back:selected,
+.dt_bauhaus,
+#popup-menu,
+#filechooser_box {
+  border-radius: 0.6em;
+}
+
+/* Subtle photo information overlay */
+#image-info {
+  background-color: alpha(@grey_10, 0.9);
+  transition: background-color 0.3s ease;
+}
+
+#image-info:hover {
+  background-color: alpha(@grey_15, 0.85);
+}
+
+/* Premium transitions */
+button,
+entry,
+combobox,
+checkbutton,
+filechooser row,
+#preferences_box .sidebar row,
+#image-info {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Refined earth tone accents */
+progressbar progress {
+  background-image: linear-gradient(
+    to right,
+    alpha(@earth_green, 0.85),
+    alpha(@earth_light, 0.6)
+  );
+}
+
+/* Premium scrollbars */
+scrollbar slider {
+  background-color: alpha(@earth_light, 0.25);
+}
+
+scrollbar slider:hover {
+  background-color: alpha(@earth_light, 0.45);
+}
+
+/* Sophisticated notifications */
+#log-msg, #toast-msg {
+  border-left: 2px solid alpha(@earthy_brown, 0.7);
+  background-color: alpha(@grey_10, 0.95);
+}
+
+/* Premium selections */
+filechooser row:selected, 
+#preferences_box .sidebar row:selected {
+  background-image: linear-gradient(
+    to right,
+    alpha(@earth_green, 0.08),
+    transparent
+  );
+}
+
+/* Ultra-subtle button interactions */
+button, #add-color-button {
+  background-color: alpha(@grey_15, 0.92);
+}
+
+button:hover, #add-color-button:hover {
+  background-color: alpha(@earth_green, 0.08);
+}
+
+/* Premium checkboxes */
+checkbutton check:checked {
+  background-color: alpha(@earth_green, 0.15);
+}
+
+/* Sophisticated sliders */
+.dt_bauhaus slider {
+  background-color: alpha(@earth_green, 0.65);
+}
+
+/* Premium list styling */
+treeview:nth-child(even) {
+  background-color: alpha(@earth_green, 0.015);
+}
+
+/* Ultra-subtle menu highlights */
+menuitem:hover {
+  background-color: alpha(@earth_green, 0.06);
+}
+
+/* Premium contrast */
+#iop-panel-label, 
+#lib-panel-label, 
+.dt_bauhaus_label {
+  color: alpha(@grey_95, 0.92);
+}
+
+/* Sophisticated thumbnail interactions */
+#thumb-main:selected #thumb-back {
+  box-shadow: 0 0 2px alpha(@earth_green, 0.4);
+}
+
+/* Premium dark backgrounds */
+#main_window, 
+#darkroom-view, 
+#lighttable-view {
+  background-color: alpha(@grey_10, 0.98);
+}
+
+/* Ultra-subtle readability enhancements */
+label, 
+#iop-plugin-ui *, 
+#lib-plugin-ui * {
+  color: alpha(@grey_95, 0.92);
+}
+
+/* Premium tooltips */
+tooltip {
+  background-color: alpha(@earth_dark, 0.94);
+  color: alpha(@grey_95, 0.94);
+  border: 0.5px solid alpha(@earth_green, 0.15);
+}
+
+/* Final premium touch */
+* {
+  transition-property: color, background-color, box-shadow, border-color;
+  transition-duration: 0.28s;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
