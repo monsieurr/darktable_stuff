@@ -1,0 +1,294 @@
+/* 
+    Refined Subtle Violet Theme for Darktable
+    Minimalist design with gentle gradients and rounded elements
+*/
+
+/* Main accent colors */
+@define-color violet_primary #8A2BE2;     /* Primary violet */
+@define-color violet_dark #4B0082;        /* Dark violet/indigo */
+@define-color violet_light #BA55D3;       /* Light violet/orchid */
+@define-color gold_accent #D4AF37;        /* Subtle gold accent */
+@define-color marine_blue #0F4C81;        /* Deep marine blue */
+@define-color accent_border alpha(@violet_primary, 0.15);
+
+/* Maintain original color definitions as base */
+
+/* Modules box (plugins) */
+@define-color plugin_bg_color @grey_20;
+@define-color plugin_fg_color @grey_80;
+@define-color section_label @violet_light;
+@define-color plugin_label_color @grey_80;
+
+/* Modules controls */
+@define-color bauhaus_fill @violet_primary;
+@define-color bauhaus_fg_selected @violet_primary;
+
+/* GTK Buttons and tabs */
+@define-color button_checked_fg @violet_primary;
+@define-color button_hover_bg alpha(@violet_primary, 0.1);
+
+/* Minimal margins and spacing */
+* {
+  margin: 0.1em;
+  padding: 0.1em;
+}
+
+/* Rounded buttons and elements */
+button,
+#add-color-button,
+entry,
+combobox,
+scrollbar slider,
+progressbar,
+tooltip {
+  border-radius: 1em;
+}
+
+/* Left accent for modules - more subtle */
+.dt_plugin_ui {
+  border-left: 1px solid alpha(@violet_primary, 0.3);
+  padding-left: 0.2em;
+  margin: 0.15em 0;
+}
+
+/* Section headers - more subtle */
+.dt_section_label {
+  color: @violet_light;
+  padding-bottom: 0.1em;
+  border: none;
+  background-image: linear-gradient(to right, alpha(@violet_light, 0.1), transparent);
+}
+
+/* Selected thumbnails in lighttable - more subtle */
+#thumb-main:selected #thumb-back {
+  box-shadow: 0 0 2px alpha(@violet_primary, 0.5);
+}
+
+/* Set top margin on active image in filmstrip */
+#thumbtable_filmstrip #thumb_main:active #thumb_back {
+  border-top: 2px solid alpha(@violet_primary, 0.7);
+}
+
+/* Histogram with subtle gradient border */
+#main-histogram {
+  border: none;
+  background-image: linear-gradient(to bottom, alpha(@marine_blue, 0.05), transparent);
+}
+
+/* Progress bar with gentle gradient */
+progressbar progress {
+  background-color: @violet_primary;
+  background-image: linear-gradient(
+    to right,
+    alpha(@violet_primary, 0.7),
+    alpha(@gold_accent, 0.3)
+  );
+  border-radius: 1em;
+}
+
+/* Refined scrollbars */
+scrollbar slider {
+  background-color: alpha(@violet_primary, 0.3);
+  min-width: 6px;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+scrollbar slider:hover {
+  background-color: alpha(@violet_primary, 0.6);
+}
+
+/* Star icons - subtle glow effect */
+.dt_overlays_hover #thumb_main:hover #thumb_star:active,
+.dt_overlays_hover_extended #thumb_main:hover #thumb_star:active,
+.dt_overlays_always #thumb_star:active,
+.dt_overlays_always_extended #thumb_star:active,
+.dt_overlays_mixed #thumb_star:active,
+.dt_overlays_hover_block #thumb_image:hover #thumb_star:active {
+  color: @violet_primary;
+  background-color: transparent;
+  min-height: 1em;
+  transition: color 0.2s ease;
+}
+
+/* Dialog windows - subtle styling */
+dialog {
+  border: none;
+  box-shadow: 0 2px 8px alpha(@violet_dark, 0.1);
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_15, 0.95),
+    alpha(@grey_20, 0.95)
+  );
+}
+
+/* Text fields with subtle focus effect */
+entry {
+  border: none;
+  background-color: alpha(@grey_15, 0.7);
+  box-shadow: inset 0 0 2px alpha(@grey_10, 0.5);
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+entry:focus {
+  background-color: alpha(@grey_15, 0.9);
+  box-shadow: inset 0 0 3px alpha(@violet_primary, 0.3);
+}
+
+/* UI messages with gentle gradient */
+#log-msg,
+#toast-msg {
+  color: @violet_light;
+  font-weight: normal;
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_10, 0.9),
+    alpha(@grey_15, 0.9)
+  );
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.4em 1em;
+  border-radius: 1em;
+}
+
+/* Sidebar selection - subtle highlight */
+filechooser row:selected,
+#preferences_box .sidebar row:selected {
+  background-image: linear-gradient(
+    to right,
+    alpha(@violet_primary, 0.1),
+    transparent
+  );
+}
+
+filechooser row:hover,
+#preferences_box .sidebar row:hover {
+  background-image: linear-gradient(
+    to right,
+    alpha(@violet_primary, 0.05),
+    transparent
+  );
+  transition: background-image 0.2s ease;
+}
+
+#preferences_box .sidebar row:selected {
+  border-left: 2px solid alpha(@violet_primary, 0.5);
+}
+
+/* Refined tooltips */
+tooltip {
+  background-color: alpha(@grey_10, 0.9);
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Buttons with subtle styling and hover effect */
+button,
+#add-color-button {
+  border: none;
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_15, 0.9),
+    alpha(@grey_20, 0.9)
+  );
+  transition: background-image 0.2s ease;
+}
+
+button:hover,
+#add-color-button:hover {
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_15, 0.8),
+    alpha(@grey_20, 0.8)
+  );
+}
+
+button:checked,
+button:active {
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@violet_primary, 0.1),
+    alpha(@violet_primary, 0.05)
+  );
+}
+
+/* Comboboxes with subtle styling */
+combobox,
+combobox button {
+  border: none;
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_15, 0.9),
+    alpha(@grey_20, 0.9)
+  );
+  transition: background-image 0.2s ease;
+}
+
+combobox:hover,
+combobox button:hover {
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_15, 0.8),
+    alpha(@grey_20, 0.8)
+  );
+}
+
+/* Checkbox styling */
+checkbutton check {
+  background-color: alpha(@grey_15, 0.7);
+  border: none;
+  box-shadow: inset 0 0 2px alpha(@grey_10, 0.5);
+  border-radius: 0.3em;
+  transition: background-color 0.2s ease;
+}
+
+checkbutton check:checked {
+  background-color: alpha(@violet_primary, 0.2);
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@violet_primary, 0.2),
+    alpha(@violet_primary, 0.1)
+  );
+}
+
+/* Bauhaus sliders */
+.dt_bauhaus slider {
+  background-color: alpha(@violet_primary, 0.7);
+  border-radius: 0.6em;
+}
+
+/* Add subtle transitions for interactive elements */
+button,
+entry,
+combobox,
+checkbutton,
+filechooser row,
+#preferences_box .sidebar row {
+  transition: all 0.2s ease;
+}
+
+/* Alternating backgrounds for lists with subtle marine blue */
+treeview:nth-child(even) {
+  background-color: alpha(@marine_blue, 0.01);
+}
+
+/* Menu and popover styling */
+menu,
+popover,
+context-menu {
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  background-image: linear-gradient(
+    to bottom,
+    alpha(@grey_10, 0.95),
+    alpha(@grey_15, 0.95)
+  );
+}
+
+menuitem:hover {
+  background-image: linear-gradient(
+    to right,
+    alpha(@violet_primary, 0.1),
+    transparent
+  );
+}
