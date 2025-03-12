@@ -1,0 +1,208 @@
+/*
+    Premium Monochrome Darktable Theme - High Contrast Edition
+    Refined, sophisticated styling with maximum readability
+*/
+
+/* Monochrome color palette */
+@define-color pure_white #FFFFFF;
+@define-color off_white #F5F5F5;
+@define-color light_gray #E0E0E0;
+@define-color mid_gray #808080;
+@define-color dark_gray #303030;
+@define-color off_black #121212;
+@define-color pure_black #000000;
+@define-color accent_border alpha(@mid_gray, 0.25);
+
+
+/* Enhanced rounded edges - increased radius */
+button,
+#add-color-button,
+entry,
+combobox,
+progressbar,
+tooltip,
+.dt_plugin_ui,
+.dt_section_label,
+#thumb-main:selected #thumb-back,
+#main-histogram,
+progressbar progress,
+scrollbar slider,
+dialog,
+entry,
+#log-msg,
+#toast-msg,
+filechooser row:selected,
+#preferences_box .sidebar row:selected,
+tooltip,
+checkbutton check,
+.dt_bauhaus slider,
+menu,
+popover,
+context-menu,
+menuitem,
+#background_job_eventbox,
+notebook header tab:checked,
+#iop-plugin-ui .module-header,
+#lib-plugin-ui .module-header,
+#thumb-back,
+#left,
+#right,
+.dt_plugin_ui,
+#control-panel,
+#image-info,
+scale,
+scale trough,
+scale trough highlight,
+#filmstrip,
+#thumb_image,
+#lighttable-view #thumb_back:selected,
+.dt_bauhaus,
+#popup-menu,
+#filechooser_box {
+  border-radius: 1em;
+}
+
+/* High contrast photo information overlay */
+#image-info {
+  background-color: alpha(@pure_black, 0.85);
+  color: @pure_white;
+  transition: background-color 0.3s ease;
+}
+
+#image-info:hover {
+  background-color: alpha(@pure_black, 0.95);
+}
+
+/* Smooth transitions for responsive elements */
+button,
+entry,
+combobox,
+checkbutton,
+filechooser row,
+#preferences_box .sidebar row,
+#image-info {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* High contrast progress bars */
+progressbar progress {
+  background-image: linear-gradient(
+    to right,
+    @pure_white,
+    @light_gray
+  );
+}
+
+/* Refined scrollbars */
+scrollbar slider {
+  background-color: alpha(@pure_white, 0.65);
+  border: 1px solid @mid_gray;
+}
+
+scrollbar slider:hover {
+  background-color: @pure_white;
+}
+
+/* High contrast notifications */
+#log-msg, #toast-msg {
+  border-left: 3px solid @pure_white;
+  background-color: alpha(@pure_black, 0.95);
+  color: @pure_white;
+}
+
+/* Enhanced selections */
+filechooser row:selected, 
+#preferences_box .sidebar row:selected {
+  background-image: linear-gradient(
+    to right,
+    @pure_white,
+    alpha(@pure_white, 0.2)
+  );
+  color: @pure_black;
+}
+
+/* High contrast button interactions */
+button, #add-color-button {
+  background-color: @dark_gray;
+  border: 1px solid @mid_gray;
+  color: @pure_white;
+}
+
+button:hover, #add-color-button:hover {
+  background-color: @mid_gray;
+  border: 1px solid @light_gray;
+}
+
+/* Bold checkboxes */
+checkbutton check {
+  border: 2px solid @mid_gray;
+}
+
+checkbutton check:checked {
+  background-color: @pure_white;
+  border: 2px solid @pure_white;
+}
+
+/* High contrast sliders */
+.dt_bauhaus slider {
+  background-color: @pure_white;
+  border: 1px solid @mid_gray;
+}
+
+/* Clean list styling */
+treeview:nth-child(even) {
+  background-color: alpha(@pure_white, 0.03);
+}
+
+treeview:nth-child(odd) {
+  background-color: alpha(@pure_black, 0.97);
+}
+
+/* Bold menu highlights */
+menuitem:hover {
+  background-color: @pure_white;
+  color: @pure_black;
+}
+
+/* Maximum contrast labels */
+#iop-panel-label, 
+#lib-panel-label, 
+.dt_bauhaus_label {
+  color: @pure_white;
+  font-weight: 500;
+}
+
+/* Bold thumbnail selections */
+#thumb-main:selected #thumb-back {
+  box-shadow: 0 0 4px @pure_white;
+  border: 1px solid @pure_white;
+}
+
+/* Deep black backgrounds */
+#main_window, 
+#darkroom-view, 
+#lighttable-view {
+  background-color: @pure_black;
+}
+
+/* Maximum contrast text */
+label, 
+#iop-plugin-ui *, 
+#lib-plugin-ui * {
+  color: @pure_white;
+}
+
+/* Bold tooltips */
+tooltip {
+  background-color: @pure_black;
+  color: @pure_white;
+  border: 1px solid @mid_gray;
+  font-weight: 500;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, box-shadow, border-color, border-radius;
+  transition-duration: 0.28s;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
