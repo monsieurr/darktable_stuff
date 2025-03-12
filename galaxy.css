@@ -1,0 +1,160 @@
+/* ==========================================================================
+   LUNAR ECLIPSE - Optimized Darktable Theme
+   A space-inspired theme with maximum information density
+   ========================================================================== */
+
+/* === LUNAR COLOR PALETTE === */
+@define-color lunar-black #0A0A0F;          /* Deep space black */
+@define-color lunar-gray #1E1E26;           /* Moon surface gray */
+@define-color lunar-blue #4A6FA5;           /* Subtle cosmic blue */
+@define-color lunar-white #E0E0E8;          /* Soft moonlit white */
+@define-color lunar-accent #6D8EB2;         /* Accent blue for highlights */
+@define-color lunar-hover #5A7A9F;          /* Hover state blue */
+
+/* === BASE STRUCTURE === */
+#main_window {
+    background-color: @lunar-black;
+    padding: 8px;
+}
+
+/* === OPTIMIZED SIDE PANELS === */
+#left, #right {
+    background-color: @lunar-gray;
+    border-radius: 8px;
+    margin: 4px;
+    padding: 8px;
+    border: 1px solid alpha(@lunar-blue, 0.1);
+}
+
+/* === TYPOGRAPHY === */
+label, #iop-panel-label, #lib-panel-label {
+    color: @lunar-white;
+    font-weight: 500;
+    font-size: 12px;
+    margin: 2px 0;
+}
+
+.dt_bauhaus_label {
+    color: alpha(@lunar-white, 0.8);
+    font-size: 10px;
+    letter-spacing: 0.03em;
+}
+
+/* === BUTTONS (UNCHANGED) === */
+button {
+    background: linear-gradient(145deg, 
+        alpha(@lunar-blue, 0.1), 
+        alpha(@lunar-blue, 0.05));
+    border: 1px solid alpha(@lunar-blue, 0.2);
+    color: @lunar-white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    margin: 4px;
+}
+
+button:hover {
+    background: linear-gradient(145deg, 
+        alpha(@lunar-hover, 0.15), 
+        alpha(@lunar-hover, 0.1));
+    border-color: alpha(@lunar-hover, 0.3);
+}
+
+button:active {
+    background: alpha(@lunar-blue, 0.2);
+}
+
+/* === INPUT FIELDS === */
+entry, combobox {
+    background: alpha(@lunar-white, 0.1);
+    border: 1px solid alpha(@lunar-blue, 0.2);
+    color: @lunar-white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: border-color 0.2s ease;
+    margin: 4px 0;
+}
+
+entry:focus, combobox:focus {
+    border-color: @lunar-accent;
+    box-shadow: 0 0 0 2px alpha(@lunar-accent, 0.1);
+}
+
+/* === SLIDERS === */
+.dt_bauhaus slider {
+    background: @lunar-accent;
+    border-radius: 4px;
+    min-height: 4px;
+}
+
+/* === PROGRESS BARS === */
+progressbar progress {
+    background: linear-gradient(90deg, 
+        alpha(@lunar-blue, 0.8), 
+        alpha(@lunar-accent, 0.8));
+    border-radius: 4px;
+}
+
+/* === OPTIMIZED MODULES === */
+.dt_plugin_ui {
+    background: alpha(@lunar-gray, 0.9);
+    border-left: 2px solid alpha(@lunar-blue, 0.2);
+    border-radius: 6px;
+    margin: 6px 0;
+    padding: 8px;
+}
+
+/* === TOOLTIPS === */
+tooltip {
+    background: alpha(@lunar-gray, 0.95);
+    border: 1px solid alpha(@lunar-blue, 0.2);
+    color: @lunar-white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* === ERROR MESSAGES === */
+#log-msg.error, #toast-msg.error {
+    background: alpha(#FF6B6B, 0.1);
+    border-left: 3px solid #FF6B6B;
+    color: #FF6B6B;
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin: 4px 0;
+}
+
+/* === SCROLLBARS === */
+scrollbar slider {
+    background: alpha(@lunar-blue, 0.4);
+    border-radius: 4px;
+    min-width: 6px;
+    transition: background-color 0.2s ease;
+}
+
+scrollbar slider:hover {
+    background: alpha(@lunar-blue, 0.6);
+}
+
+/* === THUMBNAILS === */
+#thumb-back {
+    background: @lunar-gray;
+    border-radius: 6px;
+    margin: 2px;
+}
+
+#thumb-main:selected #thumb-back {
+    border: 2px solid @lunar-accent;
+    box-shadow: 0 0 8px alpha(@lunar-accent, 0.2);
+}
+
+/* === NEGATIVE SPACE OPTIMIZATION === */
+.dt_section_label {
+    margin: 12px 0 6px 0;
+    padding: 6px 0;
+    border-bottom: 1px solid alpha(@lunar-blue, 0.1);
+    color: @lunar-accent;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: 11px;
+}
